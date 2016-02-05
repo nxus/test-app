@@ -32,7 +32,7 @@
         "connections": {
           "default": {
             "adapter": "default",
-            "url": "mongodb://localhost/100mhl"
+            "url": "mongodb://localhost/nxus-dev"
           }
         }
       }
