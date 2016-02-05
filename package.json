@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "./node_modules/forever/bin/forever stopall && NODE_ENV=test PORT=3001 ./node_modules/forever/bin/forever start index.js && sleep 15",
+    "test": "NODE_ENV=test mocha --recursive --compilers js:babel-register -R spec modules/**/test/*",
+    "posttest": "./node_modules/forever/bin/forever stop index.js"
   },
   "repository": {
     "type": "git",
@@ -56,5 +58,8 @@
     "moment": "^2.11.1",
     "sails-mongo": "^0.11.5",
     "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0"
   }
 }
