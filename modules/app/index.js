@@ -7,8 +7,8 @@
 'use strict';
 
 export default (app) => {
-  app.get('router').provide('route', 'GET', '/', (req, res) => {
+  app.get('router').route('GET', '/', (req, res) => {
     let content = "Hello world!"
-    app.get('templater').request('render', 'page', {title: "Home Page", content, opts: app.config}).then(res.send.bind(res));
+    app.get('templater').render('page', {title: "Home Page", content, opts: app.config}).then(res.send.bind(res));
   })
 }

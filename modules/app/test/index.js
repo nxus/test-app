@@ -13,6 +13,7 @@ describe("Homepage", () => {
   it('it returns 200', (done) => {
     request.get({url: '/'}, (err, res, body) => {
       res.statusCode.should.equal(200);
+      body.should.contain("Hello world")
       done()
     })
   })
