@@ -37,7 +37,8 @@
             "url": "mongodb://localhost/nxus-dev"
           }
         }
-      }
+      },
+      "baseUrl": "localhost:3000"
     },
     "siteName": "Nxus App",
     "host": "localhost",
