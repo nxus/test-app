@@ -11,11 +11,7 @@ import Basic from './model'
 export default (app) => {
   app.get('storage').model(Basic)
   
-  app.get('router').route('GET', '/', (req, res) => {
-    let content = "Hello world!"
-    app.get('templater').render('page', {title: "Home Page", content, opts: app.config}).then(res.send.bind(res));
-  })
-  app.get('router').route('GET', '/name', (req, res) => {
+  app.get('router').route('GET', '/fixtures/name', (req, res) => {
     app.get('storage').getModel('basic').then((model) => {
       model.find({}).then((insts) => {
         let content = insts[0].name

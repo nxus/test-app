@@ -7,11 +7,10 @@
 'use strict';
 
 export default (app) => {
-  app.get('templater').whatInTheWorld(1)
-  app.get('xemplater').whyNot(1)
   app.get('templater').replace('template','page', 'ejs', __dirname+"/views/page.ejs")
-  app.get('router').route('GET', '/', (req, res) => {
-    let content = "Hello world!"
-    app.get('templater').render('page', {title: "Home Page", content, opts: app.config}).then(res.send.bind(res));
+  app.get('templater').templateFile(__dirname+"/views/inner.ejs")
+  app.get('templater').templateFile(__dirname+"/views/render-in.ejs")
+  app.get('router').route('GET', '/templater/render-in', (req, res) => {
+    app.get('templater').render('render-in', 'page', {title: "Templater Page", opts: app.config}).then(res.send.bind(res));
   })
 }

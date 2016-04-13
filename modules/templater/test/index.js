@@ -9,11 +9,12 @@ chai.should()
 
 import {request} from '@nxus/tester'
 
-describe("Homepage", () => {
+describe("Templater replace and render-in", () => {
   it('it returns 200', (done) => {
-    request.get({url: '/'}, (err, res, body) => {
+    request.get({url: '/templater/render-in'}, (err, res, body) => {
       res.statusCode.should.equal(200);
-      body.should.contain("Hello world")
+      body.should.contain("Custom template")
+      body.should.contain("Inner Template")
       done()
     })
   })

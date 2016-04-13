@@ -9,19 +9,9 @@ chai.should()
 
 import {request} from '@nxus/tester'
 
-describe("Homepage", () => {
+describe("Model Fixture Page", () => {
   it('it returns 200', (done) => {
-    request.get({url: '/'}, (err, res, body) => {
-      res.statusCode.should.equal(200);
-      body.should.contain("Hello world")
-      done()
-    })
-  })
-})
-describe("Model Page", () => {
-  it('it returns 200', (done) => {
-    request.get({url: '/name'}, (err, res, body) => {
-      console.log("err", err, body)
+    request.get({url: '/fixtures/name'}, (err, res, body) => {
       res.statusCode.should.equal(200);
       body.should.contain("Charlie")
       done()

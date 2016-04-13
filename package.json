@@ -1,7 +1,7 @@
 {
-  "name": "@nxus/basic-app",
+  "name": "@nxus/test-app",
   "version": "2.4.0",
-  "description": "A template for basic Nxus applications",
+  "description": "A test bed for basic Nxus applications",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nxus/basic-app.git"
+    "url": "git+https://github.com/nxus/test-app.git"
   },
   "keywords": [
     "nxus"
@@ -19,13 +19,13 @@
   "author": "mjreich",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nxus/basic-app/issues"
+    "url": "https://github.com/nxus/test-app/issues"
   },
-  "homepage": "https://github.com/nxus/basic-app#readme",
+  "homepage": "https://github.com/nxus/test-app#readme",
   "config": {
     "dev": {
       "host": "localhost",
-      "siteName": "Nxus Dev Site",
+      "siteName": "Nxus Test Site",
       "storage": {
         "modelsDir": "./models",
         "adapters": {
@@ -34,7 +34,7 @@
         "connections": {
           "default": {
             "adapter": "default",
-            "url": "mongodb://localhost/nxus-dev"
+            "url": "mongodb://localhost/nxus-test-app"
           }
         }
       },
@@ -51,9 +51,10 @@
   },
   "dependencies": {
     "@nxus/core": "^2.4.0-6",
+    "@nxus/data-loader": "^2.4.0-1",
     "@nxus/renderer": "^2.4.0-0",
     "@nxus/router": "^2.4.0-1",
-    "@nxus/templater": "^2.4.0-1",
+    "@nxus/templater": "^2.4.0-3",
     "@nxus/storage": "^2.4.0-2",
     "@nxus/base-ui": "^2.4.0-4",
     "babel-register": "^6.4.3",
