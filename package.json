@@ -42,7 +42,17 @@
     },
     "siteName": "Nxus App",
     "host": "localhost",
-    "baseUrl": "localhost:3000"
+    "baseUrl": "localhost:3000",
+    "storage": {
+      "adapters": {
+        "default": "waterline-sqlite3"
+      },
+      "connections": {
+        "default": {
+          "adapter": "default"
+        }
+      }
+    }
   },
   "babel": {
     "presets": [
